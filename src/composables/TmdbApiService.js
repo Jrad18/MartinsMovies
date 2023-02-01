@@ -3,17 +3,13 @@ import Movie from "@/composables/Movie.js";
 
 export default class TmdbApiService
 {
-
-    movies = [];
-    genres = [];
     constructor(api_key, base_url){
         this.api_key = import.meta.env.VITE_TMDB_KEY;
         this.base_url = import.meta.env.VITE_TMDB_BASE_URL;
+        this.movies = [];
+        this.genres = [];
         this.getGenreList();
-        this.getMovies();
     }
-
-
 
     getMovies(page=1, with_keywords=null){
         return axios
@@ -24,7 +20,6 @@ export default class TmdbApiService
                     this.movies.push(new Movie(data, this, movieDetails));
                 });
                 return this.movies
-                console.log(this.movies);
             })
             .catch(error => console.error(error));
         //discover/movie

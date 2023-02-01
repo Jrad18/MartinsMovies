@@ -4,7 +4,7 @@ import MartinLogo from "@/components/MartinLogo.vue";
 
 <template>
     <div class="flex flex-row h-14 w-screen justify-center px-8 bg-[#fff]">
-        <MartinLogo/>
+<!--        <MartinLogo/>-->
         <div class="flex w-[90%] justify-center">
             <slot></slot>
         </div>

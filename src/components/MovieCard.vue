@@ -7,15 +7,15 @@ console.log("movie card");
 </script>
 
 <template>
-    <div class="h-[600px] w-[33%] p-2 flex flex-col rounded-md relative">
-        <img class="h-[50%]" :src="movie.getPosterUrl()"/>
-        <div class="h-[50%]">
-            <div class="text-2xl font-bold">{{ movie.title }}</div>
+    <div class="h-[670px] w-[30%] m-4 flex flex-col rounded-md relative bg-[#fff] text-[#444]" style="font-family: Lato; font-weight: 300;">
+        <img class="h-[50%] rounded-t-md" :src="movie.getPosterUrl()"/>
+        <div class="h-[50%] p-4">
+            <div class="text-3xl font-bold w-[70%] truncate">{{ movie.title }}</div>
             <div class="flex justify-between">
                 <MovieRating :rating="movie.rating" of="10"/>
                 <div class="text-sm">{{ movie.getGenreList() }}</div>
             </div>
-            <div>{{ movie.overview }}</div>
+            <div class="text-[#666] line-clamp-6">{{ movie.overview }}</div>
 <!--            <ReadmeButton :imdb_id="movie.imdb_id"/>-->
         </div>
         <div class="absolute top-[50%] bottom-[50%] right: 20px">
