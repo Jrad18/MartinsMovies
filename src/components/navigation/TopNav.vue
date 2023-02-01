@@ -1,5 +1,5 @@
 <script setup>
-import MartinLogo from "@/components/MartinLogo.vue";
+import MartinLogo from "@/components/icons/MartinLogo.vue";
 </script>
 
 <template>

@@ -1,8 +1,9 @@
 export default class Movie
 {
-    constructor(movieData, api, movieDetails) {
+    constructor(movieData, api) {
         this.movie_id = movieData.id;
-        this.movie_details = movieDetails;
+        this.imdb_id = "";
+        this.setImdbId(api);
         this.title = movieData.title;
         this.overview = movieData.overview;
         this.poster_path = movieData.poster_path;
@@ -23,6 +24,12 @@ export default class Movie
             array.push(this.genres.key);
         });
         return array.join(", ");
+    }
+
+    setImdbId(api){
+        api.getMovieDetails(this.movie_id).then((data) => {
+            this.imdb_id = data.imdb_id;
+        });
     }
 
 

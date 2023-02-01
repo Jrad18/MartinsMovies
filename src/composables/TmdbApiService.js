@@ -6,23 +6,21 @@ export default class TmdbApiService
     constructor(api_key, base_url){
         this.api_key = import.meta.env.VITE_TMDB_KEY;
         this.base_url = import.meta.env.VITE_TMDB_BASE_URL;
-        this.movies = [];
         this.genres = [];
         this.getGenreList();
     }
 
     getMovies(page=1, with_keywords=null){
         return axios
-            .get(this.buildUrl("discover/movie", {page: 1}))
+            .get(this.buildUrl("discover/movie", {page: page, with_keywords: with_keywords}))
             .then(response => {
+                let movies = [];
                 response.data.results.forEach(data => {
-                    let movieDetails = this.getMovieDetails(data.id);
-                    this.movies.push(new Movie(data, this, movieDetails));
+                    movies.push(new Movie(data, this));
                 });
-                return this.movies
+                return movies;
             })
             .catch(error => console.error(error));
-        //discover/movie
     }
     getMovieDetails(movie_id){
        return axios
@@ -38,6 +36,15 @@ export default class TmdbApiService
             .get(this.buildUrl("genre/movie/list"))
             .then(response => {
                 this.genres = response.data.genres;
+            })
+            .catch(error => console.error(error));
+    }
+
+    searchKeyword(query){
+        return axios
+            .get(this.buildUrl("search/keyword", {query: query}))
+            .then(response => {
+                return response.data;
             })
             .catch(error => console.error(error));
     }

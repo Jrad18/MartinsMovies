@@ -18,7 +18,7 @@ function showList(show){
          @mouseleave="showList(false);"
          style="font-family: 'Lato'; font-weight: 300">
         {{ label }}
-        <div class="absolute flex flex-col rounded-md top-[90%] w-[200px] bg-[#fff] z-50 hover:bg-white left-[-20px] shadow-md transition ease-in-out"
+        <div class="absolute flex flex-col rounded-md top-[90%] w-[200px] bg-[#fff] z-50 hover:bg-white left-[-20px] shadow-md transition ease-in-out delay-200	"
              style="transform: scale(0)translateY(-100px)"
             :style="list?'transform: scale(1)translateY(0)':''">
             <slot></slot>

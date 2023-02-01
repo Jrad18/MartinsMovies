@@ -35,8 +35,5 @@ import NavDropItem from "@/components/navigation/NavDropItem.vue";
         <div class="min-h-screen bg-martin-grey">
             <slot></slot>
         </div>
-        <FooterNav>
-
-        </FooterNav>
     </div>
 </template>
