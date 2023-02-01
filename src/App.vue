@@ -11,7 +11,7 @@ import MovieExplorer from "@/components/pages/MovieExplorer.vue";
 
   <main>
       <MainLayout>
-          <MovieExplorer/>
+          <MovieExplorer></MovieExplorer>
       </MainLayout>
   </main>
 </template>

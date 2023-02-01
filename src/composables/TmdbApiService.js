@@ -10,6 +10,7 @@ export default class TmdbApiService
         this.api_key = import.meta.env.VITE_TMDB_KEY;
         this.base_url = import.meta.env.VITE_TMDB_BASE_URL;
         this.getGenreList();
+        this.getMovies();
     }
 
 

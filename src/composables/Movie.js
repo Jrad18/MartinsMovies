@@ -11,10 +11,5 @@ export default class Movie
         this.genre_ids.forEach(genre => {
             this.genres[genre] = api.genres.find(x => x.id === genre).name;
         })
-        console.log(this.movie_details.homepage);
-    }
-
-    getGenreList(){
-
     }
 }
