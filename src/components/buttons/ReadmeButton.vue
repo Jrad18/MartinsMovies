@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <a type="button" :href="'https://imdb.com/title/'+imdb_id" class="px-4 py-2 text-[#fff] weight-400 bg-[#9352b3] rounded-md cursor-pointer hover mt-auto mr-auto">
+    <a type="button" :href="'https://imdb.com/title/'+imdb_id" class="px-4 py-2 text-[#fff] weight-400 bg-[#9352b3] rounded-md cursor-pointer hover my-auto mr-auto">
         Read Me
     </a>
 </template>
