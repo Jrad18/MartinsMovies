@@ -32,7 +32,9 @@ import NavDropItem from "@/components/navigation/NavDropItem.vue";
                 <NavDropItem href="#">Contact Us Link 3</NavDropItem>
             </NavDropList>
         </TopNav>
-        <slot></slot>
+        <div class="min-h-screen bg-martin-grey">
+            <slot></slot>
+        </div>
         <FooterNav>
 
         </FooterNav>

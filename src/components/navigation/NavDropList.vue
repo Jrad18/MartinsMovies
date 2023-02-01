@@ -9,7 +9,6 @@ const list = ref(false);
 
 function showList(show){
     list.value = show;
-    console.log(list.value);
 }
 </script>
 
